@@ -1,0 +1,6 @@
+{
+  "appTitle": "app_gestor_tareas",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
