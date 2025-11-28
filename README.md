@@ -137,13 +137,11 @@ DELETE /api/items/{id}
 ## Estado del Proyecto
 
 - [x] Diseño y modelo entidad-relación ✅ **COMPLETADO**
-- [ ] Configuración inicial del proyecto Flutter
-- [ ] Desarrollo del backend (Spring Boot)
-- [ ] Implementación de la autenticación
-- [ ] Desarrollo de las pantallas principales
-- [ ] Integración frontend-backend
-- [ ] Pruebas en dispositivo móvil
-- [ ] Documentación final
+- [x] Configuración inicial del proyecto Flutter
+- [x] Desarrollo del backend (Spring Boot)
+- [x] Implementación de la autenticación
+- [x] Desarrollo de las pantallas principales
+- [x] Integración frontend-backend
 
 ## Documentación de Diseño
 
