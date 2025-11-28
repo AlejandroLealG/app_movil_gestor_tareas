@@ -152,7 +152,6 @@ DELETE /api/items/{id}
 ## Configuración de Conexión
 
 **Método:** Configuración local
-**URLs de prueba:** Por definir (se documentarán las URLs de prueba una vez configurado el backend)
 
 ---
 
