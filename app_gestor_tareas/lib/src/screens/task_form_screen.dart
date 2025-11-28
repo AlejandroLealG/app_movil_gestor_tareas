@@ -123,7 +123,9 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                   controller: _tituloController,
                   decoration: const InputDecoration(
                     labelText: 'Título',
-                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.title),
+                    filled: true,
+                    fillColor: Colors.white,
                   ),
                   validator: (value) =>
                       value == null || value.trim().isEmpty ? 'Campo obligatorio' : null,
@@ -134,7 +136,9 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                   maxLines: 3,
                   decoration: const InputDecoration(
                     labelText: 'Descripción',
-                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.description_outlined),
+                    filled: true,
+                    fillColor: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -142,7 +146,9 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                   controller: _materiaController,
                   decoration: const InputDecoration(
                     labelText: 'Materia',
-                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.school),
+                    filled: true,
+                    fillColor: Colors.white,
                   ),
                   validator: (value) =>
                       value == null || value.trim().isEmpty ? 'Campo obligatorio' : null,
@@ -159,6 +165,9 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                               : '${_fechaEntrega!.day}/${_fechaEntrega!.month}/${_fechaEntrega!.year}',
                         ),
                         onPressed: _pickDate,
+                        style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -207,12 +216,15 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                   maxLines: 2,
                   decoration: const InputDecoration(
                     labelText: 'Notas (opcional)',
-                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.note_outlined),
+                    filled: true,
+                    fillColor: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 24),
                 SizedBox(
                   width: double.infinity,
+                  height: 50,
                   child: ElevatedButton(
                     onPressed: _isSubmitting ? null : _submit,
                     child: _isSubmitting
@@ -221,7 +233,10 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                             width: 20,
                             child: CircularProgressIndicator(strokeWidth: 2),
                           )
-                        : Text(isEditing ? 'Guardar cambios' : 'Crear tarea'),
+                        : Text(
+                            isEditing ? 'Guardar cambios' : 'Crear tarea',
+                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
                   ),
                 ),
               ],

@@ -79,16 +79,32 @@ class TaskListScreen extends StatelessWidget {
               final tasks = taskProvider.tasks;
 
               if (tasks.isEmpty) {
-                return ListView(
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.all(24),
-                      child: Text(
-                        'No tienes tareas registradas. Pulsa el botón "+" para añadir la primera.',
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.assignment_outlined,
+                        size: 80,
+                        color: Colors.grey.shade300,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        'No tienes tareas registradas',
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          color: Colors.grey.shade600,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Pulsa el botón "+" para añadir la primera',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Colors.grey.shade500,
+                        ),
                         textAlign: TextAlign.center,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 );
               }
 
@@ -129,9 +145,10 @@ class TaskListScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _openForm(context),
-        child: const Icon(Icons.add),
+        icon: const Icon(Icons.add),
+        label: const Text('Nueva tarea'),
       ),
     );
   }
